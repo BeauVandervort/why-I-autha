@@ -20,3 +20,14 @@ signUpForm.addEventListener('submit', async (event) => {
         console.error(user);
     }
 });
+
+signInForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const user = await signInUser(signInEmail.value, signInPassword.value);
+
+    if (user) {
+        redirectIfLoggedIn();
+    } else {
+        console.error(user);
+    }
+});
